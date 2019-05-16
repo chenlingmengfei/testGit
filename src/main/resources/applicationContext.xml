@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="user" class="com.ssm.user.UserImpl"/>
+    <!--seter注入-->
+    <bean id="product" class="com.ssm.seter.ProductImpl">
+        <property name="name">
+            <value>苹果</value>
+        </property>
+        <property name="price">
+            <value>13.0</value>
+        </property>
+        <property name="factory">
+            <value>江西上饶</value>
+        </property>
+    </bean>
+    <!--静态工厂实例化-->
+    <bean id="bean" class="com.ssm.staticfactory.BeanTest" factory-method="createBean"/>
+    <!--实例工厂实例化-->
+    <bean id="bean1" class="com.ssm.instance.MyInstance"/>
+    <bean id="mybean" factory-bean="bean1" factory-method="createBean"/>
+    <!--基于Xml配置的注入方式-->
+    <!--构造器注入-->
+    <bean id="User1" class="com.ssm.assemble.User">
+        <constructor-arg index="0">
+            <value>"陈琳"</value>
+        </constructor-arg>
+        <constructor-arg index="1">
+            <value>18</value>
+        </constructor-arg>
+        <constructor-arg index="2">
+            <list>
+                <value>"足球"</value>
+                <value>"音乐"</value>
+            </list>
+        </constructor-arg>
+    </bean>
+    <bean id="User2" class="com.ssm.assemble.User">
+        <property name="name">
+            <value>"周森华"</value>
+        </property>
+        <property name="age">
+            <value>18</value>
+        </property>
+        <property name="live">
+            <list>
+                <value>"电脑"</value>
+                <value>"篮球"</value>
+            </list>
+        </property>
+    </bean>
+</beans>

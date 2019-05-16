@@ -12,6 +12,6 @@ public class UserImpl implements User {
     }
 
     public void say(){
-        System.out.println("hello" + name);
+        System.out.println("hello " + name);
     }
 }
