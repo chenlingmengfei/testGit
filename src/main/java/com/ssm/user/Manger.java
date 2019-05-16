@@ -24,5 +24,9 @@ public class Manger {
         UserImpl user = (UserImpl) context.getBean("user");
         user.setName("陈琳");
         user.say();
+        UserImpl user1 = (UserImpl) context.getBean("user");
+        System.out.println("\n");
+        System.out.println(user);
+        System.out.println(user1);
     }
 }

@@ -2,22 +2,18 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="user" class="com.ssm.user.UserImpl"/>
-    <!--seter注入-->
-    <bean id="product" class="com.ssm.seter.ProductImpl">
-        <property name="name">
-            <value>苹果</value>
-        </property>
-        <property name="price">
-            <value>13.0</value>
-        </property>
-        <property name="factory">
-            <value>江西上饶</value>
-        </property>
+    <!--Bean的生命周期-->
+    <bean id="man" class="com.ssm.initAnddestroy.Man" init-method="init" destroy-method="close">
+        <property name="name" value="陈琳"/>
     </bean>
-    <!--静态工厂实例化-->
+    <!--&lt;!&ndash;不用id由man自动调用&ndash;&gt;-->
+    <!--<bean class="com.ssm.initAnddestroy.MyBeanPostProcessor"/>-->
+    <!--Bean三种实例化方式-->
+    <!--构造器实例化,并设置作用范围-->
+    <bean id="user" class="com.ssm.user.UserImpl" scope="prototype"/>
+    <!--静态工厂实例化，由于创建实例的方法是静态的，所以可以直接调用-->
     <bean id="bean" class="com.ssm.staticfactory.BeanTest" factory-method="createBean"/>
-    <!--实例工厂实例化-->
+    <!--实例工厂实例化,由于创建实例的方法不是静态的需要先有实例工厂，在调用方法-->
     <bean id="bean1" class="com.ssm.instance.MyInstance"/>
     <bean id="mybean" factory-bean="bean1" factory-method="createBean"/>
     <!--基于Xml配置的注入方式-->
@@ -35,6 +31,18 @@
                 <value>"音乐"</value>
             </list>
         </constructor-arg>
+    </bean>
+    <!--seter注入-->
+    <bean id="product" class="com.ssm.seter.ProductImpl">
+        <property name="name">
+            <value>苹果</value>
+        </property>
+        <property name="price">
+            <value>13.0</value>
+        </property>
+        <property name="factory">
+            <value>江西上饶</value>
+        </property>
     </bean>
     <bean id="User2" class="com.ssm.assemble.User">
         <property name="name">
