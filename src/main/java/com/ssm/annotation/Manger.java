@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Manger {
     public static void main(String[] args){
         //加载配置文件
-        ApplicationContext context = new ClassPathXmlApplicationContext("bean1.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("annotationApplication.xml");
         //获取实例
         UserDoController userController = (UserDoController) context.getBean("userDoController");
         userController.say();
