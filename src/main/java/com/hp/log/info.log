@@ -2,3 +2,23 @@
 INFO:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f490758: startup date [Fri May 17 15:41:23 CST 2019]; root of context hierarchy
 2019-05-17 15:41:24 下午 [Thread: main][ Class:org.springframework.beans.factory.xml.XmlBeanDefinitionReader >> Method: org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) ]
 INFO:Loading XML bean definitions from class path resource [annotationApplication.xml]
+2019-05-17 17:59:40 下午 [Thread: main][ Class:org.springframework.context.support.ClassPathXmlApplicationContext >> Method: org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) ]
+INFO:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f490758: startup date [Fri May 17 17:59:40 CST 2019]; root of context hierarchy
+2019-05-17 17:59:40 下午 [Thread: main][ Class:org.springframework.beans.factory.xml.XmlBeanDefinitionReader >> Method: org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) ]
+INFO:Loading XML bean definitions from class path resource [applicationContext.xml]
+2019-05-17 18:01:18 下午 [Thread: main][ Class:org.springframework.context.support.ClassPathXmlApplicationContext >> Method: org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) ]
+INFO:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f490758: startup date [Fri May 17 18:01:18 CST 2019]; root of context hierarchy
+2019-05-17 18:01:18 下午 [Thread: main][ Class:org.springframework.beans.factory.xml.XmlBeanDefinitionReader >> Method: org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) ]
+INFO:Loading XML bean definitions from class path resource [applicationContext.xml]
+2019-05-17 18:02:56 下午 [Thread: main][ Class:org.springframework.context.support.ClassPathXmlApplicationContext >> Method: org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) ]
+INFO:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@74294adb: startup date [Fri May 17 18:02:56 CST 2019]; root of context hierarchy
+2019-05-17 18:02:56 下午 [Thread: main][ Class:org.springframework.beans.factory.xml.XmlBeanDefinitionReader >> Method: org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) ]
+INFO:Loading XML bean definitions from class path resource [applicationContext.xml]
+2019-05-17 18:02:57 下午 [Thread: main][ Class:org.springframework.context.support.ClassPathXmlApplicationContext >> Method: org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ]
+WARN:Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mybean' defined in class path resource [applicationContext.xml]: factory-bean 'bean1' (or a BeanPostProcessor involved) returned null
+2019-05-17 18:03:12 下午 [Thread: main][ Class:org.springframework.context.support.ClassPathXmlApplicationContext >> Method: org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582) ]
+INFO:Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f490758: startup date [Fri May 17 18:03:12 CST 2019]; root of context hierarchy
+2019-05-17 18:03:12 下午 [Thread: main][ Class:org.springframework.beans.factory.xml.XmlBeanDefinitionReader >> Method: org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317) ]
+INFO:Loading XML bean definitions from class path resource [applicationContext.xml]
+2019-05-17 18:03:13 下午 [Thread: main][ Class:org.springframework.context.support.ClassPathXmlApplicationContext >> Method: org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ]
+WARN:Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mybean' defined in class path resource [applicationContext.xml]: factory-bean 'bean1' (or a BeanPostProcessor involved) returned null
