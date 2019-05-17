@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--Bean的生命周期-->
-    <bean id="man" class="com.ssm.initAnddestroy.Man" init-method="init" destroy-method="close">
-        <property name="name" value="陈琳"/>
-    </bean>
+    <!--<bean id="man" class="com.ssm.initAnddestroy.Man" init-method="init" destroy-method="close">-->
+        <!--<property name="name" value="陈琳"/>-->
+    <!--</bean>-->
     <!--&lt;!&ndash;不用id由man自动调用&ndash;&gt;-->
     <!--<bean class="com.ssm.initAnddestroy.MyBeanPostProcessor"/>-->
     <!--Bean三种实例化方式-->
@@ -15,7 +16,7 @@
     <bean id="bean" class="com.ssm.staticfactory.BeanTest" factory-method="createBean"/>
     <!--实例工厂实例化,由于创建实例的方法不是静态的需要先有实例工厂，在调用方法-->
     <bean id="bean1" class="com.ssm.instance.MyInstance"/>
-    <bean id="mybean" factory-bean="bean1" factory-method="createBean"/>
+    <!--<bean id="mybean" factory-bean="bean1" factory-method="createBean"/>-->
     <!--基于Xml配置的注入方式-->
     <!--构造器注入-->
     <bean id="User1" class="com.ssm.assemble.User">
@@ -33,17 +34,66 @@
         </constructor-arg>
     </bean>
     <!--seter注入-->
-    <bean id="product" class="com.ssm.seter.ProductImpl">
-        <property name="name">
-            <value>苹果</value>
+    <!--<bean id="product" class="com.ssm.seter.Product">-->
+        <!--<property name="name">-->
+            <!--<value>苹果</value>-->
+        <!--</property>-->
+        <!--<property name="price">-->
+            <!--<value>13.0</value>-->
+        <!--</property>-->
+        <!--<property name="factory">-->
+            <!--<value>江西上饶</value>-->
+        <!--</property>-->
+        <!--<property name="category" ref="category"/>-->
+    <!--</bean>-->
+    <!--p名称空间注入-->
+    <bean id="category" class="com.ssm.seter.Category" p:name="分类" />
+    <!--<bean id="product" class="com.ssm.seter.Product" p:name="苹果" p:price="12" p:factory="江西上饶" p:category-ref="category"/>-->
+    <!--使用SEPL注入方式-->
+    <bean id="product" class="com.ssm.seter.Product" p:factory="#{'江西上饶'}">
+        <property name="name" value="#{'苹果'}"/>
+        <property name="price" value="#{13.0}"/>
+        <property name="category" value="#{category}"/>
+    </bean>
+    <!--复杂属性的注入-->
+    <bean id="collectionBean" class="com.ssm.collectionBean.CellectionBean">
+        <!--数组类型的属性注入-->
+        <property name="arrs">
+            <list>
+                <value>aaa</value>
+                <value>ddd</value>
+            </list>
         </property>
-        <property name="price">
-            <value>13.0</value>
+        <!--list集合的属性注入-->
+        <property name="list">
+            <list>
+                <value>苹果</value>
+                <value>香蕉</value>
+            </list>
         </property>
-        <property name="factory">
-            <value>江西上饶</value>
+        <!--set集合的属性注入-->
+        <property name="set">
+            <set>
+                <value>苹果</value>
+                <value>香蕉</value>
+            </set>
+        </property>
+        <!--map集合的属性注入-->
+        <property name="map">
+            <map>
+                <entry key="苹果" value="12"/>
+                <entry key="香蕉" value="13"/>
+            </map>
+        </property>
+        <!--properties的属性注入-->
+        <property name="properties">
+            <props>
+                <prop key="苹果">12</prop>
+                <prop key="香蕉">13</prop>
+            </props>
         </property>
     </bean>
+    <!--list标签的使用-->
     <bean id="User2" class="com.ssm.assemble.User">
         <property name="name">
             <value>"周森华"</value>
@@ -58,4 +108,7 @@
             </list>
         </property>
     </bean>
+    <!--测试BeanPostProcessor实现校验-->
+    <bean id="dataOperating" class="com.ssm.DataOperating.OperatingDataImpl"/>
+    <bean class="com.ssm.DataOperating.DataBeanPostProcessor"/>
 </beans>
