@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /*
 *使用jdk代理的对象，必须实现每个接口
  */
-public class Manger {
+public class Manage {
     @Test
     public void demo() {
         //加载配置文件

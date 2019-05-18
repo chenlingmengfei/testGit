@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Manger {
+public class Manage {
     @Test
     public void demo() {
         ApplicationContext context = new ClassPathXmlApplicationContext("proxyApplicationContext.xml");
